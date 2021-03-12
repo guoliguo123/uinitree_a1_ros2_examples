@@ -33,16 +33,16 @@ set(LIB_DIR /usr/lib/x86_64-linux-gnu)
 add_library(libboost_system SHARED IMPORTED)
 set_target_properties(libboost_system PROPERTIES IMPORTED_LOCATION ${LIB_DIR}/libboost_system.so.1.65.1)
 add_executable(keyboard 
-               src/msg_pub.cpp
-               src/keyboard.cpp 
-	       src/main.cpp)
+                      src/msg_pub.cpp
+                                src/keyboard.cpp 
+								src/main.cpp)
 ament_target_dependencies(keyboard
 	                ${dependencies}
-			 a1_msgs)
+			                a1_msgs)
 
 target_link_libraries(keyboard 
-		      boost_thread
-		      libboost_system)
+		boost_thread
+		libboost_system)
 install(TARGETS
         keyboard
         DESTINATION lib/${PROJECT_NAME}
