@@ -6,18 +6,18 @@
 #include <boost/thread/thread.hpp>
 #include "msg_pub.h"
 enum SetCmd{
-	CMD_SET_MODE_STAND = 0,
-	CMD_SET_MODE_FORCE_STAND,
-	CMD_SET_MODE_WALK,
-	CMD_SET_BODY_HEIGH_UP,
-	CMD_SET_BODY_HEIGH_DOWN,
-	CMD_SET_YAW_UP,
-	CMD_SET_YAW_DOWN,
-	CMD_SET_PITCH_UP,
-	CMD_SET_PITCH_DOWN,
-	CMD_SET_ROLL_LEFT,
-	CMD_SET_ROLL_RIGHT,
-	CMD_SET_CLEAR_ALL
+    CMD_SET_MODE_STAND = 0,
+    CMD_SET_MODE_FORCE_STAND,
+    CMD_SET_MODE_WALK,
+    CMD_SET_BODY_HEIGH_UP,
+    CMD_SET_BODY_HEIGH_DOWN,
+    CMD_SET_YAW_UP,
+    CMD_SET_YAW_DOWN,
+    CMD_SET_PITCH_UP,
+    CMD_SET_PITCH_DOWN,
+    CMD_SET_ROLL_LEFT,
+    CMD_SET_ROLL_RIGHT,
+    CMD_SET_CLEAR_ALL
 };
 
 #define KEYCODE_I 0x69
@@ -52,15 +52,15 @@ enum SetCmd{
 
 class KeyBoard {
 public:
-	KeyBoard():kfd(0),pub(){
-		
-	}
-	PubNode pub;
-	void keyboardLoop();
-	void freeKeyBoard();
-private:
-	int kfd;
-	struct termios cooked = {0};
-	struct termios raw = {0};
-	struct pollfd ufd = {0};
+    KeyBoard():kfd(0),pub(){
+
+    }
+    PubNode pub;
+    void keyboardLoop();
+    void freeKeyBoard();
+    private:
+    int kfd;
+    struct termios cooked = {0};
+    struct termios raw = {0};
+    struct pollfd ufd = {0};
 };
